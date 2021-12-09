@@ -1,9 +1,10 @@
 import React from 'react'
+import MoviesContainer from './MoviesContainer'
 
 export default function App() {
     return (
         <div>
-            <p>Hello World</p>
+            <MoviesContainer />
         </div>
     )
 }
