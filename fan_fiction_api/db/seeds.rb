@@ -9,3 +9,7 @@
 movie = Movie.create(title:"Mummy", plot:"in ancient mayan empire, in what is now Peru, ....", setting:"Mayan Empire", genre:"Historical Fiction")
 
 review = Review.create(content:"Too many histrocial inaccuracies in the timeline.", movie_id: 1)
+
+# 10.each do 
+#     title = Faker::Movie.title
+#     plot =
