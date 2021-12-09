@@ -13,7 +13,7 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
-    <Provider store={(store)}>
+    <Provider store={store}>
         <App />
     </Provider>,
     document.getElementById('root')
