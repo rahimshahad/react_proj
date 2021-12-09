@@ -1,9 +1,12 @@
 import React from 'react'
-
-export default function MoviesContainer() {
+import {connect} from 'react-redux'
+import {fetchMovies} from '../actions/moviesActions'
+ function MoviesContainer() {
     return (
         <div>
            Movies Container 
         </div>
     )
 }
+
+export default connect(null,{ fetchMovies})(MoviesContainer)
