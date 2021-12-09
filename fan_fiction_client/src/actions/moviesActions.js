@@ -2,8 +2,8 @@
 
 export const fetchMovies = () =>{
     return (dispatch) => {
-        fetch('localhost:3000/movies')
-        .then(resp => resp.json)
-        .then(movies => console.table(movies))
+        fetch('http://localhost:3000/movies')
+        .then(resp => resp.json())
+        .then(movies => console.table('fetchMovies', movies))
     }
 }
