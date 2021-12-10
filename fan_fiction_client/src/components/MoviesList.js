@@ -1,15 +1,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-  function MoviesList({movies}) {
+  const MoviesList = ({movies}) => {
     return (
         <div>
-            
+            <h1>List of Movies:</h1>
+            {movies.map(movie =>
+            <ul key={movie.id}><li>
+                {movie.title} - {movie.plot} - {movie.setting} - {movie.genre}
+                </li>
+                </ul>
+                )}
         </div>
     )
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = (state) =>{
     return { movies: state.movies}
 }
 

@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchMovies} from '../actions/moviesActions'
+import MoviesForm from './MoviesForm'
+import MoviesList from '../components/MoviesList'
+
  class MoviesContainer extends Component {
 
     componentDidMount(){
@@ -8,8 +11,8 @@ import {fetchMovies} from '../actions/moviesActions'
     }
     render(){
     return (
-        <div>
-           Movies Container 
+        <div> 
+           <MoviesForm />
         </div>
     )
     }
