@@ -17,10 +17,15 @@ import { addMovie } from '../actions/moviesActions'
             [name]: value
         })
     }
+    handleSubmit = (e) =>{
+        e.preventDefault()
+        this.props.addMovie(state)
+    }
+
     render() {
         return (
             <div>
-               <form >
+               <form onSubmit={handleSubmit} >
                    <label>Title:</label>
                    <input type='text' value={this.state.title} name='title' onChange={this.handleChange}/>
                    <br/>
