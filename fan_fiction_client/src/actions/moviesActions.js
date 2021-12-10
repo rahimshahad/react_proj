@@ -7,3 +7,13 @@ export const fetchMovies = () =>{
         .then(movies => dispatch({type: 'FETCH_MOVIES', payload: movies}))
     }
 }
+
+export const addMovie = (movie) =>{
+    fetch('http://localhost:3000/movies',{
+        method:'POST',
+        body: JSON.stringify(movie),
+        headers: { 'Content-Type':'application/json'}
+    })
+        .then(resp => resp.json())
+        .then(movie => dispatch({type: 'ADD_MOVIE', payload: movie}))
+}

@@ -18,7 +18,7 @@ export default class MoviesForm extends Component {
     render() {
         return (
             <div>
-               <form>
+               <form >
                    <label>Title:</label>
                    <input type='text' value={this.state.title} name='title' onChange={this.handleChange}/>
                    <br/>
