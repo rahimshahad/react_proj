@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import { addMovie } from '../actions/moviesActions'
 
-export default class MoviesForm extends Component {
+ class MoviesForm extends Component {
     state ={
         title: '',
         plot: '',
@@ -37,3 +39,5 @@ export default class MoviesForm extends Component {
         )
     }
 }
+
+export default connect(null,{addMovie})(MoviesForm)
