@@ -3,6 +3,6 @@ import { moviesReducer } from "./moviesReducer";
 import { reviewsReducer } from "./reviewsReducer";
 
 export const rootReducer = combineReducers({
-    mvoies: moviesReducer,
+    movies: moviesReducer,
     reviews: reviewsReducer
 })
