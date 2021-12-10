@@ -15,7 +15,7 @@ export default class MoviesForm extends Component {
                    <input type='text' value={this.state.title} name='title'/>
                    <br/>
                    <label>Plot:</label>
-                   <input type='text' value={this.state.plot} name='plot'/>
+                   <textarea value={this.state.plot} name='plot'/>
                    <br/>
                    <label>Setting:</label>
                    <input type='text' value={this.state.setting} name='setting'/>
@@ -23,7 +23,7 @@ export default class MoviesForm extends Component {
                    <label>Genre:</label>
                    <input type='text' value={this.state.genre} name='genre'/>
                    <br/>
-                   <input type='submit' value='Create Movie' />>
+                   <input type='submit' value='Create Movie' />
                </form>
             </div>
         )
