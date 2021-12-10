@@ -1,9 +1,16 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-export default function MoviesList() {
+  function MoviesList({movies}) {
     return (
         <div>
             
         </div>
     )
 }
+
+const mapStateToProps = state =>{
+    return { movies: state.movies}
+}
+
+export default connect(mapStateToProps)(MoviesList);
