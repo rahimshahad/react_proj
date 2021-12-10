@@ -9,6 +9,7 @@ export const fetchMovies = () =>{
 }
 
 export const addMovie = (movie) =>{
+    return (dispatch) =>{ 
     fetch('http://localhost:3000/movies',{
         method:'POST',
         body: JSON.stringify(movie),
@@ -16,4 +17,5 @@ export const addMovie = (movie) =>{
     })
         .then(resp => resp.json())
         .then(movie => dispatch({type: 'ADD_MOVIE', payload: movie}))
+}
 }
