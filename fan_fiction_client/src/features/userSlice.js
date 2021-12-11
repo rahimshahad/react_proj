@@ -37,3 +37,5 @@ export const selectSignedIn = (state) => state.user.isSignedIn;
 export const selectUserData = (state) => state.user.userData;
 export const selectUserInput = (state) => state.user.searchInput;
 export const selectMovieData = (state) => state.user.movieData;
+
+export default userSlice.reducer
