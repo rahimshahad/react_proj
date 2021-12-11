@@ -25,3 +25,10 @@ const userSlice =createSlice({
         },
     }
 })
+
+export const {
+    setSignedIn, 
+    setUserData, 
+    setInput,
+     setmovieData
+    } = userSlice.actions;
