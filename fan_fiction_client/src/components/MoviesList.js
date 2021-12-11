@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { Button } from '../styled-components/Button.style'
-
+import { deleteMovie } from '../actions/moviesActions'
   const MoviesList = ({movies}) => {
     return (
         <div>
@@ -10,7 +10,7 @@ import { Button } from '../styled-components/Button.style'
             <ul key={movie.id}><li>
                 {movie.title} - {movie.plot} - {movie.setting} - {movie.genre}
                 <Button > Edit Movie </Button>
-                <Button > Delete Movie </Button>
+                <Button onClick> Delete Movie </Button>
                 </li>
                 </ul>
                 )}
@@ -18,8 +18,10 @@ import { Button } from '../styled-components/Button.style'
     )
 }
 
+
+
 const mapStateToProps = (state) =>{
     return { movies: state.movies}
 }
 
-export default connect(mapStateToProps)(MoviesList);
+export default connect(mapStateToProps, {deleteMovie})(MoviesList);
