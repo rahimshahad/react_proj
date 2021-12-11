@@ -10,5 +10,6 @@ export const moviesReducer = (state = initialState, action) => {
             return [...state]  
         default:
             return state
+
     }
 }
