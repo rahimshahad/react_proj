@@ -8,12 +8,18 @@ export default class SignUp extends Component{
         password: ""
     }
 
+    handleChange =(e) =>{
+        this.setState({
+            [event.target.name] : event.target.value
+        })
+    }
+
     render(){
         return(
             <div>
-                <Form >
+                <Form onSubmit={this.handleSubmit}>
                     <label>Username:</label>
-                    <FormInput name='username' value={this.state.username} />
+                    <FormInput name='username' value={this.state.username} onChange={this.handleChange} />
                     <br/> 
                     <label>Password:</label>
                     <FormInput name='password' type='password' />
