@@ -9,7 +9,7 @@ export const moviesReducer = (state = initialState, action) => {
       state = state.filter((movie) => movie.id !== action.payload);
       return [...state];
     case "EDIT_MOVIE":
-      [
+      return [
         ...state.map((movie) =>
           movie.id === action.payload.id ? action.payload : movie
         ),
