@@ -12,3 +12,12 @@ export const NavLink = styled(Link)`
         color: #15cdfc;
     }
 `
+export const NavMenu = styled.div`
+    align-items: center;
+    margin-right: 44%;
+    font-weight: 800;
+
+    @media screen and (max-width: 768) {
+        display: none;
+    }
+`
