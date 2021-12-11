@@ -8,6 +8,8 @@ export const moviesReducer = (state = initialState, action) => {
         case 'DELETE_MOVIE':
             state = state.filter(movie => movie.id !== action.payload)
             return [...state]  
+        // case 'EDIT_MOVIE':
+
         default:
             return state
 
