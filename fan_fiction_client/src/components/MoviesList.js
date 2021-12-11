@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
+import { Button } from '../styled-components/Button.style'
 
   const MoviesList = ({movies}) => {
     return (
@@ -9,6 +9,8 @@ import {connect} from 'react-redux'
             {movies.map(movie =>
             <ul key={movie.id}><li>
                 {movie.title} - {movie.plot} - {movie.setting} - {movie.genre}
+                <Button > Edit Movie </Button>
+                <Button > Delete Movie </Button>
                 </li>
                 </ul>
                 )}
