@@ -19,3 +19,12 @@ export const addMovie = (movie) =>{
         .then(movie => dispatch({type: 'ADD_MOVIE', payload: movie}))
 }
 }
+
+export const deleteMovie = (movieId) => {
+    return (dispatch) =>{
+        fetch('http://localhost:3000/movies/${movieId}', {
+            method: 'DELETE',
+        })
+        dispatch({type: 'DELETE_MOVIE', payload: movieId})
+    }
+}
