@@ -10,7 +10,7 @@ const Navbar = () => {
                 <NavLink exact to ='/'>Home</NavLink>
                 <NavLink exact to ='/movies'>Movies</NavLink>
                 <NavLink exact to ='/about'>About</NavLink>
-                <NavLink exact to ='/reviews'>Reviews</NavLink>
+                {/* <NavLink exact to ='/reviews'>Reviews</NavLink> */}
 
             
         </>
