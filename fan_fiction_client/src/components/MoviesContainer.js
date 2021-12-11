@@ -13,7 +13,8 @@ import MoviesList from './MoviesList'
     render(){
     return (
         <div> 
-           <MoviesForm />
+           {/* <MoviesForm /> */}
+           <MoviesList />
         </div>
     )
     }
