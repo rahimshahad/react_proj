@@ -21,6 +21,12 @@ import { Form, FormInput } from '../styled-components/Form.style'
     handleSubmit = (e) =>{
         e.preventDefault()
         this.props.addMovie(this.state)
+        this.setState({
+            title : '',
+            plot : '',
+            setting : '',
+            genre : ''
+        })
     }
 
     render() {
