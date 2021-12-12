@@ -3,14 +3,15 @@ import { connect } from "react-redux";
 import { Button } from "../styled-components/Button.style";
 import EditMovieForm from "./EditMovieForm";
 import { deleteMovie } from "../actions/moviesActions";
+import { Link } from 'react-router-dom'
 
 const MoviesList = ({ movies, deleteMovie }) => {
-  const [showEditForm, setShowEditForm] = useState(false);
+  // const [showEditForm, setShowEditForm] = useState(false);
 
-  const showForm = () =>{
-    // debugger
-    setShowEditForm(!showEditForm)
-  }
+  // const showForm = () =>{
+  //   // debugger
+  //   setShowEditForm(!showEditForm)
+  // }
 
   const handleSubmit = (e, movieID) => {
     e.preventDefault();
@@ -30,8 +31,10 @@ const MoviesList = ({ movies, deleteMovie }) => {
                 <li>{review.content}</li>
               ))}
             </ul>
-            <Button onClick={()=>showForm()}> Edit Movie </Button>
-            {showEditForm && <EditMovieForm setShowEditForm={setShowEditForm}/>}
+            <Link to= {`movies/${movie.id}/edit`}> 
+            <Button > Edit Movie </Button>
+            </Link>
+            {/* {showEditForm && <EditMovieForm setShowEditForm={setShowEditForm}/>} */}
             <Button onClick={(e) => handleSubmit(e, movie.id)}>
               Delete Movie
             </Button>

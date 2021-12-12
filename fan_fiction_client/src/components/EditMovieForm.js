@@ -9,7 +9,7 @@ import { Form, FormInput } from '../styled-components/Form.style'
         plot: this.props.plot,
         setting: this.props.setting,
         genre: this.props.genre,
-        id: this.props.id
+        // id: this.props.id
     }
 
     handleChange = (e) => {
