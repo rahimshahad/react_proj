@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {editMovie} from '../actions/moviesActions'
 import {connect} from 'react-redux'
+import { Form, FormInput } from '../styled-components/Form.style'
  class EditMovieForm extends Component {
 
     state = {
@@ -9,6 +10,7 @@ import {connect} from 'react-redux'
         setting: this.props.setting,
         genre: this.props.genre
     }
+
     render() {
         return (
             <div>

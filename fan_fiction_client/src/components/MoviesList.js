@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Button } from "../styled-components/Button.style";
+import EditMovieForm from "./EditMovieForm";
 import { deleteMovie } from "../actions/moviesActions";
+
 const MoviesList = ({ movies, deleteMovie }) => {
+  const [showEditForm, setShowEditForm] = useState(false);
+
+  const showForm = () =>{
+    // debugger
+    setShowEditForm(!showEditForm)
+  }
+
   const handleSubmit = (e, movieID) => {
-      e.preventDefault()
+    e.preventDefault();
     deleteMovie(movieID);
     console.log("movieID", movieID);
   };
@@ -21,7 +30,8 @@ const MoviesList = ({ movies, deleteMovie }) => {
                 <li>{review.content}</li>
               ))}
             </ul>
-            <Button> Edit Movie </Button>
+            <Button onClick={()=>showForm()}> Edit Movie </Button>
+            {showEditForm && <EditMovieForm setShowEditForm={setShowEditForm}/>}
             <Button onClick={(e) => handleSubmit(e, movie.id)}>
               Delete Movie
             </Button>
