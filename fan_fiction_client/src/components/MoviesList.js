@@ -5,7 +5,7 @@ import { Button } from "../styled-components/Button.style";
 import { deleteMovie } from "../actions/moviesActions";
 import { Link } from "react-router-dom";
 import {editMovie} from "../actions/moviesActions"
-import { addReview } from "../actions/moviesActions";
+// import { addReview } from "../actions/moviesActions";
 
 const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
   const handleSubmit = (e, movieID) => {
@@ -15,17 +15,21 @@ const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
   };
   return (
     <div className="movies-list">
+      <center> 
       <h1>List of Movies:</h1>
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>
-            {movie.title} - {movie.plot} - {movie.setting} - {movie.genre}
-            <h3>Reviews</h3>
+            <h1> {movie.title}</h1>
+              <p><strong>Plot:</strong> {movie.plot}</p>
+               <p> Setting: {movie.setting}</p> 
+               <p>  Genre: {movie.genre} </p>
+            {/* <h3>Reviews</h3>
             <ul>
               {movie.reviews.map((review) => (
                 <li>{review.content}</li>
               ))}
-            </ul>
+            </ul> */}
             <Link to={`movies/${movie.id}/edit`}>
               <Button onClick={() => editMovie(movie.id)}> Edit Movie </Button>
             </Link>
@@ -33,13 +37,14 @@ const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
               Delete Movie
             </Button>
             <Link to={`movies/${movie.id}/review/new`}> 
-            <Button onClick={()=> addReview()}>
+            {/* <Button onClick={()=> addReview(movie.review)}>
               Add Review
-            </Button>
+            </Button> */}
             </Link>
           </li>
         ))}
       </ul>
+      </center>
     </div>
   );
 };
@@ -51,4 +56,4 @@ const mapStateToProps = (state) => {
   return { movies };
 };
 
-export default connect(mapStateToProps, { deleteMovie, editMovie, addReview })(MoviesList);
+export default connect(mapStateToProps, { deleteMovie, editMovie})(MoviesList);

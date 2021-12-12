@@ -24,17 +24,17 @@ export const moviesReducer = (state = initialState, action) => {
         return  item.id === updatedMovie.id ? updatedMovie : item
       })
       return {...state, movies: result, currentMovie:{}}
-      case "ADD_REVIEW":
-        const movieWithReview = state.movies.find(
-          (movie) => movie.id === action.payload.movie_id
-          // payload here is the review
-          // the code above is finding the movie whose id matches the movie_id of the payload(review)
-         )
-        // state.movies.map((item) => console.table(item))
-         return { 
-         movies: state.movies.map((item) => console.log(item.first))
-          // item.id === movieWithReview.id ? {...movieWithReview, reviews:[...movieWithReview.review, action.payload]} : item)}
-         }
+      // case "ADD_REVIEW":
+      //   const movieWithReview = state.movies.find(
+      //     (movie) => movie.id === action.payload.movie_id
+      //     // payload here is the review
+      //     // the code above is finding the movie whose id matches the movie_id of the payload(review)
+      //    )
+      //   // state.movies.map((item) => console.table(item))
+      //    return { 
+      //    movies: state.movies.map((item) => 
+         
+      //     item.id === movieWithReview.id ? {...movieWithReview, reviews:[...movieWithReview.review, action.payload]} : item)}
       //  map through movies 
     default:
       return state;
