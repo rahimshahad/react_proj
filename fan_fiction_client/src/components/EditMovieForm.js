@@ -8,7 +8,22 @@ import { Form, FormInput } from '../styled-components/Form.style'
         title: this.props.title,
         plot: this.props.plot,
         setting: this.props.setting,
-        genre: this.props.genre
+        genre: this.props.genre,
+        id: this.props.id
+    }
+
+    handleChange = (e) => {
+        const {name, value} = e.target;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleSubmit = (e) =>{
+        e.preventDefault()
+        this.props.editMovie(this.state)
+        this.props.setShowEditForm(false)
     }
 
     render() {
