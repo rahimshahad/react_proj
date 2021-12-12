@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Button } from "../styled-components/Button.style";
-import EditMovieForm from "./EditMovieForm";
+// import EditMovieForm from "./EditMovieForm";
 import { deleteMovie } from "../actions/moviesActions";
 import { Link } from "react-router-dom";
 import {editMovie} from "../actions/moviesActions"
 import { addReview } from "../actions/moviesActions";
 
-const MoviesList = ({ movies, deleteMovie, editMovie}) => {
+const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
   const handleSubmit = (e, movieID) => {
     e.preventDefault();
     deleteMovie(movieID);
@@ -32,9 +32,11 @@ const MoviesList = ({ movies, deleteMovie, editMovie}) => {
             <Button onClick={(e) => handleSubmit(e, movie.id)}>
               Delete Movie
             </Button>
-            <Button>
+            <Link to={`movies/${movie.id}/review/new`}> 
+            <Button onClick={()=> addReview(movie.id, movie.review)}>
               Add Review
             </Button>
+            </Link>
           </li>
         ))}
       </ul>

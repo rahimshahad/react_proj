@@ -47,9 +47,9 @@ export const updateMovie = (movie) => {
   
 };
 
-export const addReview = (movieId, review) =>{
+export const addReview = ( review) =>{
   return (dispatch) =>{
-    fetch(`http://localhost:3000/reviews/${movieId}`,{
+    fetch('http://localhost:3000/reviews',{
       method: "POST",
       body: JSON.stringify(review),
       headers: { "Content-Type": "application/json" },
