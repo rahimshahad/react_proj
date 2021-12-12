@@ -5,6 +5,7 @@ import EditMovieForm from "./EditMovieForm";
 import { deleteMovie } from "../actions/moviesActions";
 import { Link } from "react-router-dom";
 import {editMovie} from "../actions/moviesActions"
+import { addReview } from "../actions/moviesActions";
 
 const MoviesList = ({ movies, deleteMovie, editMovie}) => {
   const handleSubmit = (e, movieID) => {
@@ -48,4 +49,4 @@ const mapStateToProps = (state) => {
   return { movies };
 };
 
-export default connect(mapStateToProps, { deleteMovie, editMovie })(MoviesList);
+export default connect(mapStateToProps, { deleteMovie, editMovie, addReview })(MoviesList);
