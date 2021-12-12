@@ -1,19 +1,24 @@
-const initialState = [];
+const initialState = {
+  movies: [],
+  currentMovie: {},
+};
 export const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_MOVIES":
-      return action.payload
+      return { ...state, movies: [...action.payload] };
     case "ADD_MOVIE":
-      return [...state, action.payload];
+      return { ...state, movies: [...state.movies, action.payload] };
     case "DELETE_MOVIE":
-      state = state.filter((movie) => movie.id !== action.payload);
-      return [...state];
+      const undeleted = state.movies.filter(
+        (movie) => movie.id !== action.payload
+      );
+      return { ...state, movies: [...undeleted] };
     case "EDIT_MOVIE":
-      return [
-        ...state.map((movie) =>
-          movie.id === action.payload.id ? action.payload : movie
-        ),
-      ];
+      const movie = state.movies.find(
+        (element) => element.id === action.payload
+      );
+      return { ...state, currentMovie: movie };
+    
 
     default:
       return state;

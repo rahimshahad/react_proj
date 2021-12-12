@@ -29,7 +29,9 @@ export const deleteMovie = (movieId) => {
   };
 };
 
-export const editMovie = (movie) => {
+export const editMovie = (id) => ({ type: "EDIT_MOVIE", payload: id });
+
+export const updateMovie = (movie) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/movies/${movie.id}`, {
       method: "PATCH",

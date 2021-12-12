@@ -3,16 +3,10 @@ import { connect } from "react-redux";
 import { Button } from "../styled-components/Button.style";
 import EditMovieForm from "./EditMovieForm";
 import { deleteMovie } from "../actions/moviesActions";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import {editMovie} from "../actions/moviesActions"
 
-const MoviesList = ({ movies, deleteMovie }) => {
-  // const [showEditForm, setShowEditForm] = useState(false);
-
-  // const showForm = () =>{
-  //   // debugger
-  //   setShowEditForm(!showEditForm)
-  // }
-
+const MoviesList = ({ movies, deleteMovie, editMovie}) => {
   const handleSubmit = (e, movieID) => {
     e.preventDefault();
     deleteMovie(movieID);
@@ -31,10 +25,9 @@ const MoviesList = ({ movies, deleteMovie }) => {
                 <li>{review.content}</li>
               ))}
             </ul>
-            <Link to= {`movies/${movie.id}/edit`}> 
-            <Button > Edit Movie </Button>
+            <Link to={`movies/${movie.id}/edit`}>
+              <Button onClick={() => editMovie(movie.id)}> Edit Movie </Button>
             </Link>
-            {/* {showEditForm && <EditMovieForm setShowEditForm={setShowEditForm}/>} */}
             <Button onClick={(e) => handleSubmit(e, movie.id)}>
               Delete Movie
             </Button>
@@ -46,7 +39,10 @@ const MoviesList = ({ movies, deleteMovie }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { movies: state.movies };
+  const {
+    movies: { movies },
+  } = state;
+  return { movies };
 };
 
-export default connect(mapStateToProps, { deleteMovie })(MoviesList);
+export default connect(mapStateToProps, { deleteMovie, editMovie })(MoviesList);

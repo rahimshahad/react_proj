@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import {editMovie} from '../actions/moviesActions'
+import {updateMovie} from '../actions/moviesActions'
 import {connect} from 'react-redux'
 import { Form, FormInput } from '../styled-components/Form.style'
  class EditMovieForm extends Component {
 
     state = {
-        title: this.props.title,
-        plot: this.props.plot,
-        setting: this.props.setting,
-        genre: this.props.genre,
-        // id: this.props.id
+        title: this.props.currentMovie.title,
+        plot: this.props.currentMovie.plot,
+        setting: this.props.currentMovie.setting,
+        genre: this.props.currentMovie.genre,
     }
 
     handleChange = (e) => {
@@ -22,8 +22,7 @@ import { Form, FormInput } from '../styled-components/Form.style'
 
     handleSubmit = (e) =>{
         e.preventDefault()
-        this.props.editMovie(this.state)
-        this.props.setShowEditForm(false)
+        this.props.updateMovie(this.state)
     }
 
     render() {
@@ -48,5 +47,9 @@ import { Form, FormInput } from '../styled-components/Form.style'
         )
     }
 }
+const mapStateToProps = (state) =>{
+    const {movies: {currentMovie}} = state
+    return {currentMovie}
+}
 
-export default connect(null, {editMovie})(EditMovieForm)
+export default connect(mapStateToProps, {editMovie, updateMovie})(EditMovieForm)
