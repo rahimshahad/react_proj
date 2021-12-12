@@ -18,7 +18,12 @@ export const moviesReducer = (state = initialState, action) => {
         (element) => element.id === action.payload
       );
       return { ...state, currentMovie: movie };
-    
+    case "UPDATE_MOVIE":
+      const updatedMovie = action.payload
+      const result = state.movies.map((item) => {
+        return  item.id === updatedMovie.id ? updatedMovie : item
+      })
+      return {...state, movies: result, currentMovie:{}}
 
     default:
       return state;

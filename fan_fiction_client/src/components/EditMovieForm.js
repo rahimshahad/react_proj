@@ -9,7 +9,7 @@ import { Form, FormInput } from '../styled-components/Form.style'
         title: this.props.currentMovie.title,
         plot: this.props.currentMovie.plot,
         setting: this.props.currentMovie.setting,
-        genre: this.props.currentMovie.genre,
+        genre: this.props.currentMovie.genre
     }
 
     handleChange = (e) => {
@@ -22,7 +22,13 @@ import { Form, FormInput } from '../styled-components/Form.style'
 
     handleSubmit = (e) =>{
         e.preventDefault()
-        this.props.updateMovie(this.state)
+        this.props.updateMovie({...this.props.currentMovie, ...this.state})
+        this.setState ({
+            title: '',
+            plot: '',
+            setting: '',
+            genre: ''
+        })
     }
 
     render() {

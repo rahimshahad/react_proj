@@ -31,7 +31,9 @@ export const deleteMovie = (movieId) => {
 
 export const editMovie = (id) => ({ type: "EDIT_MOVIE", payload: id });
 
+
 export const updateMovie = (movie) => {
+  console.log(movie.id)
   return (dispatch) => {
     fetch(`http://localhost:3000/movies/${movie.id}`, {
       method: "PATCH",
@@ -39,6 +41,8 @@ export const updateMovie = (movie) => {
       headers: { "content-type": "application/json" },
     })
       .then((resp) => resp.json())
-      .then((movie) => dispatch({ type: "EDIT_MOVIE", payload: movie }));
+      .then((movie) => dispatch({ type: "UPDATE_MOVIE", payload: movie }))
+      .catch((error) => console.log(error));
   };
+  
 };
