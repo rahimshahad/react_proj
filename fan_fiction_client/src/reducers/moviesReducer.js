@@ -24,7 +24,15 @@ export const moviesReducer = (state = initialState, action) => {
         return  item.id === updatedMovie.id ? updatedMovie : item
       })
       return {...state, movies: result, currentMovie:{}}
-      
+      case "ADD_REVIEW":
+        const reviewedMovie = state.movies.find(
+          movie => movie.id === action.payload
+        )
+         reviewedMovie.reviews.push(action.payload.content)
+          const updatedMoviesWithReview = state.movies.map((rev) => rev.id === reviewedMovie.id ? reviewedMovie : rev)
+        return {...state, movies: updatedMoviesWithReview }
+        // find movie to add review to
+        // add the review to current movie without changing other params
     default:
       return state;
   }
