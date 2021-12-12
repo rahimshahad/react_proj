@@ -1,7 +1,6 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import Home from '../components/Home'
-import MoviesList from './MoviesList'
 import MoviesForm from './MoviesForm'
 import About from './About'
 import MoviesContainer from './MoviesContainer'

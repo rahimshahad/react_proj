@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Button } from "../styled-components/Button.style";
 // import EditMovieForm from "./EditMovieForm";
@@ -14,7 +14,7 @@ const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
     console.log("movieID", movieID);
   };
   return (
-    <div>
+    <div className="movies-list">
       <h1>List of Movies:</h1>
       <ul>
         {movies.map((movie) => (
@@ -33,7 +33,7 @@ const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
               Delete Movie
             </Button>
             <Link to={`movies/${movie.id}/review/new`}> 
-            <Button onClick={()=> addReview(movie.id, movie.review)}>
+            <Button onClick={()=> addReview()}>
               Add Review
             </Button>
             </Link>
@@ -46,7 +46,7 @@ const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
 
 const mapStateToProps = (state) => {
   const {
-    movies: { movies },
+    movies: { movies }
   } = state;
   return { movies };
 };
