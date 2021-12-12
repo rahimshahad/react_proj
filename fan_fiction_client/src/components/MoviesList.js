@@ -31,6 +31,9 @@ const MoviesList = ({ movies, deleteMovie, editMovie}) => {
             <Button onClick={(e) => handleSubmit(e, movie.id)}>
               Delete Movie
             </Button>
+            <Button>
+              Add Review
+            </Button>
           </li>
         ))}
       </ul>

@@ -24,7 +24,7 @@ export const moviesReducer = (state = initialState, action) => {
         return  item.id === updatedMovie.id ? updatedMovie : item
       })
       return {...state, movies: result, currentMovie:{}}
-
+      
     default:
       return state;
   }
