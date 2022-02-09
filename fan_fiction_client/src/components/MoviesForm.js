@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { addMovie } from '../actions/moviesActions'
-import { Form, FormInput } from '../styled-components/Form.style'
+import { Form, FormInput } from './styled-components/Form.style'
 
  class MoviesForm extends Component {
     state ={

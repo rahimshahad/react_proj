@@ -7,7 +7,9 @@ import MoviesList from './MoviesList'
  class MoviesContainer extends Component {
 
     componentDidMount(){
+        console.log("a")
         this.props.fetchMovies()
+        console.log("b")
     }
     render(){
     return (

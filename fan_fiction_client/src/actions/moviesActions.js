@@ -1,11 +1,16 @@
 // an action to fetch all movies from api
 
 export const fetchMovies = () => {
+  console.log("c")
   return (dispatch) => {
     fetch("http://localhost:3000/movies")
-      .then((resp) => resp.json())
+      .then((resp) =>{
+        console.log("e")
+       return resp.json()
+      })
       .then((movies) => dispatch({ type: "FETCH_MOVIES", payload: movies }));
   };
+  console.log("d")
 };
 
 export const addMovie = (movie) => {
@@ -55,6 +60,7 @@ export const updateMovie = (movie) => {
 //       headers: { "Content-Type": "application/json" },
 //     })
 //     .then(resp => resp.json())
-//     .then((review) => dispatch({ type: "ADD_REVIEW", payload: review }));
+//     .then((review) => 
+//     dispatch({ type: "ADD_REVIEW", payload: review }));
 //   }
 // }
