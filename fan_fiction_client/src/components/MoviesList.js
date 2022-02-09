@@ -5,28 +5,28 @@ import { Button } from "./styled-components/Button.style";
 import { deleteMovie } from "../actions/moviesActions";
 import { Link } from "react-router-dom";
 import {editMovie} from "../actions/moviesActions"
-import {useState} from 'react'
+// import {useState} from 'react'
 // import { addReview } from "../actions/moviesActions";
 
 const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
-  const [filterMovies, setFilterMovies] = useState([])
+  // const [filterMovies, setFilterMovies] = useState([])
   const handleSubmit = (e, movieID) => {
     e.preventDefault();
     deleteMovie(movieID);
     // console.log("movieID", movieID);
   };
 
-  const handleChange = (e) =>{
-    const search = e.target.value.toLowerCase()
-    const filterMovie = movies.filter(movie => movie.title.toLowerCase().includes(search))
-    setFilterMovies(filterMovie)
-  }
+  // const handleChange = (e) =>{
+  //   const search = e.target.value.toLowerCase()
+  //   const filterMovie = movies.filter(movie => movie.title.toLowerCase().includes(search))
+  //   setFilterMovies(filterMovie)
+  // }
   return (
     <div className="movies-list">
       <center> 
       <h1>List of Movies:</h1>
       <ul>
-        {filterMovies.map((movie) => (
+        {movies.map((movie) => (
           <li key={movie.id}>
             <h1> {movie.title}</h1>
               <p><strong>Plot:</strong> {movie.plot}</p>
@@ -54,10 +54,10 @@ const MoviesList = ({ movies, deleteMovie, editMovie, addReview}) => {
       </ul>
       </center>
 
-    <form>
+    {/* <form>
       <label> Search:</label>
       <input type="text" onChange={handleChange}/>
-    </form>
+    </form> */}
     </div>
   );
 };
