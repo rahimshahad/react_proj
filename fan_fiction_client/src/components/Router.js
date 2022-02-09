@@ -4,7 +4,6 @@ import Home from '../components/Home'
 import MoviesForm from './MoviesForm'
 import About from './About'
 import MoviesContainer from './MoviesContainer'
-import SignUp from './SignUpForm'
 import EditMovieForm from './EditMovieForm'
 import ReviewForm from './ReviewForm'
 export default function Router() {
@@ -16,7 +15,6 @@ export default function Router() {
            <Route exact path='/movies/new' component={MoviesForm} />
            <Route exact path='/movies/:id/edit' component={EditMovieForm} />
            <Route exact path='/movies/:id/review/new' component={ReviewForm} />
-           <Route exact path='/signup' component={SignUp} />
        </Switch>
     )
 }
